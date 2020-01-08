@@ -42,7 +42,7 @@ const getFileType = (filename, buffer) => {
 const processImage = async img => {
   let { distPath, assetPath, attribute } = config;
 
-  const external = /https?:\/\/((?:[\w\d-]+\.)+[\w\d]{2,})/i;
+  const external = /https?:\/\/(?:[\w\d-]+\.*)+/i;
   const imgPath = img.getAttribute(attribute);
 
   if (external.test(imgPath)) {
