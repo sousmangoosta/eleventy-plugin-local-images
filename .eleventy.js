@@ -49,7 +49,8 @@ const processImage = async img => {
     try {
       // get the filname from the path
       const pathComponents = imgPath.split('/');
-      let filename = pathComponents[pathComponents.length - 1];
+      const queryStringRemoval = pathComponents[pathComponents.length - 1].split('?');
+      let filename = queryStringRemoval[0];
       
       // generate a unique short hash based on the original file path
       // this will prevent filename clashes
